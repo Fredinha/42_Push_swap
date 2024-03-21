@@ -6,7 +6,7 @@
 /*   By: fgomes-f <fgomes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:35:35 by fgomes-f          #+#    #+#             */
-/*   Updated: 2023/11/03 17:22:24 by fgomes-f         ###   ########.fr       */
+/*   Updated: 2024/03/19 17:00:27 by fgomes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ t_stack *create_node(int number)
 	node->next = NULL;
 	//node->prev = NULL;
 	return(node);
-}
+ck	*next;
+	struct s_stack	*prev;}
 void	add_to_stack(t_stack **stack, t_stack *new_node)
 {
 	t_stack	*current;
@@ -58,7 +59,8 @@ void	add_to_stack(t_stack **stack, t_stack *new_node)
 		//current->prev = NULL;
 		while (current->next != NULL)
 			current = current->next;
-		current->next = new_node;
+		current->next ck	*next;
+	struct s_stack	*prev;= new_node;
 		new_node->prev = current;
 	}
 }
@@ -74,15 +76,16 @@ void	add_to_stack(t_stack **stack, t_stack *new_node)
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
-	t_stack	*b;
-	int		size;
+//	t_stack	*b;
+//ck	*next;
+	struct s_stack	*prev;	int		size;
 	t_stack	*current; //isto e so para testar
 	
 	if (correct_input(argc, argv) == 0)
 		return (0);
 	a = create_stack(argv);
-	b = NULL;
-	size = argc - 1;
+//	b = NULL;
+//	size = argc - 1;
 	current = a; //isto e so para testar
 	//este while tbm e so para testar
 	while (current != NULL)
