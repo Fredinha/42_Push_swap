@@ -40,8 +40,10 @@ t_stack *create_node(int number)
 	node->next = NULL;
 	//node->prev = NULL;
 	return(node);
-ck	*next;
-	struct s_stack	*prev;}
+//	struct s_stack	*next;
+//	struct s_stack	*prev;
+}
+
 void	add_to_stack(t_stack **stack, t_stack *new_node)
 {
 	t_stack	*current;
@@ -59,8 +61,7 @@ void	add_to_stack(t_stack **stack, t_stack *new_node)
 		//current->prev = NULL;
 		while (current->next != NULL)
 			current = current->next;
-		current->next ck	*next;
-	struct s_stack	*prev;= new_node;
+		current->next = new_node;
 		new_node->prev = current;
 	}
 }
@@ -77,8 +78,9 @@ int	main(int argc, char **argv)
 {
 	t_stack	*a;
 //	t_stack	*b;
-//ck	*next;
-	struct s_stack	*prev;	int		size;
+//	struct s_stack	*next;
+//	struct s_stack	*prev;	
+//	int		size;
 	t_stack	*current; //isto e so para testar
 	
 	if (correct_input(argc, argv) == 0)
