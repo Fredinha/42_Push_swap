@@ -84,7 +84,7 @@ int correct_input(int argc, char **argv)
 	else
 	{
 		return (1);
-		ft_printf("The input is correct :)\n");
+	//	ft_printf("The input is correct :)\n");
 	}
 	return (0);
 }

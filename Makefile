@@ -12,7 +12,7 @@
 
 NAME = push_swap
 
-SRC = main.c good_input.c
+SRC = main.c good_input.c s_functions.c p_functions.c r_functions.c rr_functions.c
 
 OBJS = ${SRC:.c=.o}
 

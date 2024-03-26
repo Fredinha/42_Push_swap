@@ -29,6 +29,7 @@ t_stack *create_stack(char **argv)
 	}
 	return (a);
 }
+
 t_stack *create_node(int number)
 {
 	t_stack *node;
@@ -66,9 +67,46 @@ void	add_to_stack(t_stack **stack, t_stack *new_node)
 	}
 }
 
-// criar get_size(int argc, char **argv)
+// criar get_size(t_list *stack)
+
+int	get_size(t_stack *stack)
+{
+	int	size;
+
+	size = 0;
+	if (!stack)
+		return (0);
+	while (stack)
+	{
+		stack = stack->next;
+		size++;
+	}
+	return (size);
+}
 
 // criar put_index(int a)
+
+void	put_index(t_stack *stack)
+{
+	t_stack *current;
+	t_stack	*temp;
+	int	count;
+
+	current = stack;
+	while (current != NULL)
+	{
+		temp = stack;
+		count = 0;
+		while (temp != NULL)
+		{
+			if (temp->data < current->data)
+				count++;
+			temp = temp->next;
+		}
+		current->index = count + 1;
+		current = current->next;
+	}
+}
 
 // criar push_swap(int a, int b)
 
@@ -77,19 +115,27 @@ void	add_to_stack(t_stack **stack, t_stack *new_node)
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
-//	t_stack	*b;
+	//t_stack	*b;
 //	struct s_stack	*next;
 //	struct s_stack	*prev;	
-//	int		size;
+	int		size;
+//	int		sizee;
 	t_stack	*current; //isto e so para testar
-	
+
 	if (correct_input(argc, argv) == 0)
 		return (0);
 	a = create_stack(argv);
-//	b = NULL;
+	//b = NULL;
 //	size = argc - 1;
-	current = a; //isto e so para testar
+	 //isto e so para testar
 	//este while tbm e so para testar
+	size = get_size(a);	
+	put_index(a);
+	//ra_function(&a);
+//	rra_function(&a);
+	///sa_function(&a);
+	//put_index(a);
+	current = a;
 	while (current != NULL)
 	{
 		ft_printf("The element is %i\n", current->data);
@@ -98,14 +144,24 @@ int	main(int argc, char **argv)
 		else
 			ft_printf("No previous element\n");
 		if (current->next != NULL)
-			ft_printf("The next element is %i\n\n", current->next->data);
+			ft_printf("The next element is %i\n", current->next->data);
 		else
-			ft_printf("No next element\n\n");
+			ft_printf("No next element\n");
+		ft_printf("The index is %i\n\n", current->index);
 		current = current->next;
 	}
-//	size = get_size(argc, argv);	
-/*	put_index(a);
-	push_swap(a, b);
+	//pb_function(&a, &b);
+
+	//sizee = argc - 1;
+	
+	ft_printf("The size of the list is %i\n\n", size);
+//	ft_printf("The sizee of the list is %i\n", sizee);
+	
+	
+	//sizee = argc - 1;
+	
+//	ft_printf("The size of the list is %i\n\n", size);
+/*	push_swap(a, b);
 	free_stack(a);
 	free_stack(b); */
 //ft_printf ("Everything seems fine!\n");
