@@ -37,7 +37,7 @@ t_stack	*find_min(t_stack *stack)
 	return (min);
 }
 
-int	transforme_negatives(int number)
+int	transform_negatives(int number)
 {
 	if (number < 0)
 		return (number * -1);
@@ -78,9 +78,9 @@ void	do_cheapest_move(t_stack **a, t_stack **b)
 	cheapest = INT_MAX;
 	while (temp)
 	{
-		if (transform_negatives(tmp->cost_a) + transforme_negatives(temp->cost_b) < transforme_negatives(cheapest))
+		if (transform_negatives(tmp->cost_a) + transform_negatives(temp->cost_b) < transform_negatives(cheapest))
 		{
-			cheapest = transforme_negatives(temp->cost_b) + transforme_negatives(temp->cost_a);
+			cheapest = transform_negatives(temp->cost_b) + transform_negatives(temp->cost_a);
 			cost_a = temp->cost_a;
 			cost_b = temp->cost_b;
 		}
