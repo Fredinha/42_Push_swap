@@ -157,45 +157,17 @@ void *sort_three(t_stack **a)
 		sa_function(a);
 }
 
-
-
-void	prepare_everything(t_stack *a, t_stack *b)
-{
-	put_index(a);
-	put_index(b);
-	define_target(a, b);
-	cost_analysis(a, b);
-	define_cheapest(a);
-}
-
-//move_to_b
-//prepare_everything
-//move_to_a
-
-//fazer o big sort
-
 void	big_sort(t_stack **a, t_stack **b)
 {
-	int		size;
-
-	size = get_size(*a);
-	if (size-- > 3 && !stack_is_sorted(*a))
-		pb_function(a, b);
-	if (size-- > 3 && !stack_is_sorted(*a))
-		ft_pb(a, b);
-	while (size > 3 && !stack_is_sorted(*a))
+	push_all_save_two(a, b);
+	while (*b)
 	{
-		prepare_everything(a, b);
-		ft_move_to_b(a, &b);
+		get_target_position(a, b);
+		get_cost(a, b);
+		do_cheapest_move(a, b);
 	}
-	ft_sort_three(a);
-	while (b)
-	{
-		prepare_everything(b, a);
-		ft_move_to_a(b, a);
-	}
-	put_index(*a);
-	free_the_stack(&b);
+	if (!stack_is_sorted(*a))
+		reorder_based_on_lowest(a);
 }
 
 // criar push_swap(int a, int b)
@@ -253,13 +225,11 @@ int	main(int argc, char **argv)
 //	struct s_stack	*next;
 //	struct s_stack	*prev;	
 	int		size;
-	t_stack	*current; //isto e so para testar
-
-	b = NULL;
+//	t_stack	*current; //isto e so para testar
 	if (correct_input(argc, argv) == 0)
 		return (0);
 	a = create_stack(argv);
-	//b = NULL;
+	b = NULL;
 //	size = argc - 1;
 	 //isto e so para testar
 	//este while tbm e so para testar
@@ -269,8 +239,8 @@ int	main(int argc, char **argv)
 //	rra_function(&a);
 	///sa_function(&a);
 	//put_index(a);
-	current = a;
-	while (current != NULL)
+	//current = a;
+	/*while (current != NULL)
 	{
 		ft_printf("The element is %i\n", current->number);
 		if (current->prev != NULL)
@@ -294,11 +264,11 @@ int	main(int argc, char **argv)
 	
 	//sizee = argc - 1;
 	
-//	ft_printf("The size of the list is %i\n\n", size);
+//	ft_printf("The size of the list is %i\n\n", size);*/
 	if (!stack_is_sorted(a))
 		push_swap(&a, &b, size);
-	free_the_stack(a);
-	free_the_stack(b);
+	free_the_stack(&a);
+	free_the_stack(&b);
 	return (0);
 //ft_printf ("Everything seems fine!\n");
 }
