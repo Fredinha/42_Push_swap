@@ -15,6 +15,8 @@
 
 # include <unistd.h>
 # include "./libftplus/libft.h"
+# include <stdbool.h>
+#include <limits.h>
 
 typedef struct s_stack
 {
@@ -22,9 +24,9 @@ typedef struct s_stack
 	struct s_stack	*next;
 	struct s_stack	*prev;	
 	int	index;
-	int	push_cost;
-	bool	above_median;
-	bool	cheapest;
+	int	position;
+	int	cost_a;
+	int	cost_b;
 	struct s_stack	*target;
 
 }					t_stack;
