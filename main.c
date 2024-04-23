@@ -249,31 +249,13 @@ bool	stack_is_sorted(t_stack *a)
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
-	//t_stack	*b;
+	t_stack	*b;
 //	struct s_stack	*next;
 //	struct s_stack	*prev;	
 	int		size;
-//	t_stack	*b;
-	int		size_a;
-
-	size_a = ft_stack_size(*a);
-	b = NULL;
-	if (size_a-- > 3 && !check_sort(*a))
-		ft_pb(a, &b, 1);
-	if (size_a-- > 3 && !check_sort(*a))
-		ft_pb(a, &b, 1);
-	if (size_a > 3 && !check_sort(*a))
-		ft_move_to_b(a, &b);
-	ft_sort_three(a);
-	while (b)
-	{
-		init_stack_b(b, *a);
-		ft_move_to_a(&b, a);
-	}
-	set_index(*a);
-	ft_stackclear(&b, ft_free);int		sizee;
 	t_stack	*current; //isto e so para testar
 
+	b = NULL;
 	if (correct_input(argc, argv) == 0)
 		return (0);
 	a = create_stack(argv);
@@ -317,5 +299,6 @@ int	main(int argc, char **argv)
 		push_swap(&a, &b, size);
 	free_the_stack(a);
 	free_the_stack(b);
+	return (0);
 //ft_printf ("Everything seems fine!\n");
 }
