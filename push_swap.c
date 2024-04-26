@@ -36,7 +36,7 @@ void	reorder_based_on_lowest(t_stack **a)
 	lowest = get_lowest_index_position(a);
 	if (lowest > size / 2)
 	{
-		while (pos < size)
+		while (lowest < size)
 		{
 			rra_function(a);
 			lowest++;
@@ -46,7 +46,7 @@ void	reorder_based_on_lowest(t_stack **a)
 	{
 		while (lowest > 0)
 		{
-			ra_position(a);
+			ra_function(a);
 			lowest--;
 		}
 	}
@@ -54,14 +54,19 @@ void	reorder_based_on_lowest(t_stack **a)
 
 //fazer o sort_three
 
-void *sort_three(t_stack **a)
+
+void	*sort_three(t_stack **stack)
 {
-	if ((*a)->number == find_max(*a))
-		ra_function(a);
-	else if ((*a)->next->number == find_max(*a))
-		rra_function(a);
-	if ((*a)->nbr > (*a)->next->nbr)
-		sa_function(a);
+	t_stack	*biggest;
+
+	biggest = find_max(*stack);
+	if (biggest == *stack)
+		ra_function(stack);
+	if (biggest == (*stack)->next)
+		rra_function(stack);
+	if ((*stack)->number > (*stack)->next->number)
+		sa_function(stack);
+	return (*stack);
 }
 
 void	big_sort(t_stack **a, t_stack **b)

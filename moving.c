@@ -6,7 +6,7 @@ void	do_rev_rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
 	{
 		(*cost_a)++;
 		(*cost_b)++;
-		rrr_funcrion(a, b);
+		rrr_function(a, b);
 	}
 }
 

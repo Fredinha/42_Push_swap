@@ -24,7 +24,7 @@ void	put_index(t_stack *stack)
 
 void	get_position(t_stack **stack)
 {
-	t_list	*temp;
+	t_stack	*temp;
 	int		i;
 
 	temp = *stack;
@@ -40,7 +40,7 @@ void	get_position(t_stack **stack)
 // retorna a posicao do menor index na stack
 int	get_lowest_index_position(t_stack **stack)
 {
-	t_list	*temp;
+	t_stack	*temp;
 	int		lowest_index;
 	int		lowest_pos;
 
@@ -91,7 +91,7 @@ int	get_target(t_stack **a, int b_index, int target_index, int target_pos)
 
 void	get_target_position(t_stack **a, t_stack **b)
 {
-	t_list	*temp_b;
+	t_stack	*temp_b;
 	int		target_pos;
 
 	temp_b = *b;
@@ -101,7 +101,7 @@ void	get_target_position(t_stack **a, t_stack **b)
 	while (temp_b)
 	{
 		target_pos = get_target(a, temp_b->index, INT_MAX, target_pos);
-		temp_b->target_position = target_pos;
+		temp_b->target = target_pos;
 		temp_b = temp_b->next;
 	}
 }

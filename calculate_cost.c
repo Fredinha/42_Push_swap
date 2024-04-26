@@ -23,7 +23,7 @@ t_stack	*find_max(t_stack *a)
 
 t_stack	*find_min(t_stack *stack)
 {
-	t_stack	min;
+	t_stack	*min;
 
 	min = stack;
 	if (!stack)
@@ -60,9 +60,9 @@ void	get_cost(t_stack **a, t_stack **b)
 		temp_b->cost_b = temp_b->position;
 		if (temp_b->position > size_b / 2)
 			temp_b->cost_b = (size_b - temp_b->position) * -1;
-		temp_b->cost_a = temp_b->target_position;
-		if (temp_b->target_position > size_a / 2)
-			temp_b->cost_a = (size_a - temp_b->target_position) * -1;
+		temp_b->cost_a = temp_b->target;
+		if (temp_b->target > size_a / 2)
+			temp_b->cost_a = (size_a - temp_b->target) * -1;
 		temp_b = temp_b->next;
 	}
 }
@@ -78,7 +78,7 @@ void	do_cheapest_move(t_stack **a, t_stack **b)
 	cheapest = INT_MAX;
 	while (temp)
 	{
-		if (transform_negatives(tmp->cost_a) + transform_negatives(temp->cost_b) < transform_negatives(cheapest))
+		if (transform_negatives(temp->cost_a) + transform_negatives(temp->cost_b) < transform_negatives(cheapest))
 		{
 			cheapest = transform_negatives(temp->cost_b) + transform_negatives(temp->cost_a);
 			cost_a = temp->cost_a;

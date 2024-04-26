@@ -18,9 +18,9 @@ void swap_function(t_stack *stack)
 
     if (stack == NULL || stack->next == NULL)
         return;
-    temp = stack->data;
-    stack->data = stack->next->data;
-    stack->next->data = temp;
+    temp = stack->number;
+    stack->number = stack->next->number;
+    stack->next->number = temp;
 }
 
 void sa_function(t_stack **stack_a)
