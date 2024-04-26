@@ -1,14 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fgomes-f <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/26 15:37:22 by fgomes-f          #+#    #+#             */
+/*   Updated: 2024/04/26 15:37:24 by fgomes-f         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-t_stack *create_stack(char **argv)
+t_stack	*create_stack(char **argv)
 {
 	t_stack	*a;
 	int		i;
-	t_stack 	*new_node;
+	t_stack	*new_node;
 
 	a = NULL;
 	i = 1;
-
 	while (argv[i] != NULL)
 	{
 		new_node = create_node(ft_atoi(argv[i]));
@@ -18,19 +29,16 @@ t_stack *create_stack(char **argv)
 	return (a);
 }
 
-t_stack *create_node(int number)
+t_stack	*create_node(int number)
 {
-	t_stack *node;
+	t_stack	*node;
 
 	node = malloc(sizeof(t_stack));
 	if (!node)
 		return (NULL);
 	node->number = number;
 	node->next = NULL;
-	//node->prev = NULL;
-	return(node);
-//	struct s_stack	*next;
-//	struct s_stack	*prev;
+	return (node);
 }
 
 void	add_to_stack(t_stack **stack, t_stack *new_node)
@@ -39,7 +47,7 @@ void	add_to_stack(t_stack **stack, t_stack *new_node)
 
 	if (!stack)
 		return ;
-	if(!*stack)
+	if (!*stack)
 	{
 		*stack = new_node;
 		new_node->prev = NULL;
@@ -47,7 +55,6 @@ void	add_to_stack(t_stack **stack, t_stack *new_node)
 	else
 	{
 		current = *stack;
-		//current->prev = NULL;
 		while (current->next != NULL)
 			current = current->next;
 		current->next = new_node;
@@ -73,13 +80,13 @@ int	get_size(t_stack *stack)
 }
 
 // criar free_stack (int x)
-void free_the_stack(t_stack **stack)
+void	free_the_stack(t_stack **stack)
 {
 	t_stack	*temp;
 	t_stack	*current;
 
 	if (!stack)
-		return;
+		return ;
 	current = *stack;
 	while (current)
 	{

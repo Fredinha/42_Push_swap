@@ -12,32 +12,32 @@
 
 #include "push_swap.h"
 
-void swap_function(t_stack *stack)
+void	swap_function(t_stack *stack)
 {
-    int temp;
+	int	temp;
 
-    if (stack == NULL || stack->next == NULL)
-        return;
-    temp = stack->number;
-    stack->number = stack->next->number;
-    stack->next->number = temp;
+	if (stack == NULL || stack->next == NULL)
+		return ;
+	temp = stack->number;
+	stack->number = stack->next->number;
+	stack->next->number = temp;
 }
 
-void sa_function(t_stack **stack_a)
+void	sa_function(t_stack **stack_a)
 {
-    swap_function(*stack_a);
-    ft_printf("sa\n");
+	swap_function(*stack_a);
+	ft_printf("sa\n");
 }
 
-void sb_function(t_stack **stack_b)
+void	sb_function(t_stack **stack_b)
 {
-    swap_function(*stack_b);
-    ft_printf("sb\n");
+	swap_function(*stack_b);
+	ft_printf("sb\n");
 }
 
-void ss_function(t_stack **stack_a, t_stack **stack_b)
+void	ss_function(t_stack **stack_a, t_stack **stack_b)
 {
-    swap_function(*stack_a);
-    swap_function(*stack_b);
-    ft_printf("ss\n");
+	swap_function(*stack_a);
+	swap_function(*stack_b);
+	ft_printf("ss\n");
 }

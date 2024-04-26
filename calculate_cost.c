@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   calculate_cost.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fgomes-f <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/26 15:34:57 by fgomes-f          #+#    #+#             */
+/*   Updated: 2024/04/26 15:35:00 by fgomes-f         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 //fazer o find_max
@@ -18,7 +30,6 @@ t_stack	*find_max(t_stack *a)
 	return (max);
 }
 
-
 //fazer o find_min
 
 t_stack	*find_min(t_stack *stack)
@@ -37,7 +48,7 @@ t_stack	*find_min(t_stack *stack)
 	return (min);
 }
 
-int	transform_negatives(int number)
+int	no_neg(int number)
 {
 	if (number < 0)
 		return (number * -1);
@@ -78,9 +89,10 @@ void	do_cheapest_move(t_stack **a, t_stack **b)
 	cheapest = INT_MAX;
 	while (temp)
 	{
-		if (transform_negatives(temp->cost_a) + transform_negatives(temp->cost_b) < transform_negatives(cheapest))
+		if (no_neg(temp->cost_a) + no_neg(temp->cost_b)
+			< no_neg(cheapest))
 		{
-			cheapest = transform_negatives(temp->cost_b) + transform_negatives(temp->cost_a);
+			cheapest = no_neg(temp->cost_b) + no_neg(temp->cost_a);
 			cost_a = temp->cost_a;
 			cost_b = temp->cost_b;
 		}

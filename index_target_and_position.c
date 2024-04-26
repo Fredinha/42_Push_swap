@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   index_target_and_position.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fgomes-f <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/26 15:35:23 by fgomes-f          #+#    #+#             */
+/*   Updated: 2024/04/26 15:35:26 by fgomes-f         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	put_index(t_stack *stack)
 {
-	t_stack *current;
+	t_stack	*current;
 	t_stack	*temp;
-	int	count;
+	int		count;
 
 	current = stack;
 	while (current != NULL)

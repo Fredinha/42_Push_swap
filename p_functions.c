@@ -12,27 +12,26 @@
 
 #include "push_swap.h"
 
-void    push_function(t_stack **a, t_stack **b)
+void	push_function(t_stack **a, t_stack **b)
 {
-    t_stack *temp;
+	t_stack	*temp;
 
-    if (*a == NULL)
-        return;
-    temp = *a;
-    *a = (*a)->next;
-    temp->next = *b;
-    *b = temp;
+	if (*a == NULL)
+		return ;
+	temp = *a;
+	*a = (*a)->next;
+	temp->next = *b;
+	*b = temp;
 }
 
-void    pb_function(t_stack **a, t_stack **b)
+void	pb_function(t_stack **a, t_stack **b)
 {
-    push_function(a, b);
-    ft_printf("pb\n");
+	push_function(a, b);
+	ft_printf("pb\n");
 }
 
-void    pa_function(t_stack **a, t_stack **b)
+void	pa_function(t_stack **a, t_stack **b)
 {
-    push_function(b, a);
-    ft_printf("pa\n");
+	push_function(b, a);
+	ft_printf("pa\n");
 }
-

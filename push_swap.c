@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fgomes-f <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/26 15:36:57 by fgomes-f          #+#    #+#             */
+/*   Updated: 2024/04/26 15:36:59 by fgomes-f         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	push_all_save_two(t_stack **a, t_stack **b)
@@ -54,7 +66,6 @@ void	reorder_based_on_lowest(t_stack **a)
 
 //fazer o sort_three
 
-
 void	*sort_three(t_stack **stack)
 {
 	t_stack	*biggest;
@@ -84,7 +95,7 @@ void	big_sort(t_stack **a, t_stack **b)
 
 // criar push_swap(int a, int b)
 
-void	push_swap (t_stack **a, t_stack **b, int size)
+void	push_swap(t_stack **a, t_stack **b, int size)
 {
 	if (size == 2)
 		sa_function(a);
@@ -93,4 +104,3 @@ void	push_swap (t_stack **a, t_stack **b, int size)
 	else if (size > 3)
 		big_sort(a, b);
 }
-

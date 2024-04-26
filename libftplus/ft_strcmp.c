@@ -14,10 +14,10 @@
 #include <stdio.h>
 #include "libft.h"
 
-int    ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
-	
+
 	i = 0;
 	while (s1)
 	{
@@ -51,11 +51,18 @@ int    ft_strcmp(char *s1, char *s2)
 	s7 = "";
 	s8 = "13111";
 
-	printf("this is s1: %s\nthis is s2: %s\nthis is the result: %d\nthis is my result: %d\n\n", s1, s2, strcmp(s1, s2), ft_strcmp(s1, s2));
-	printf("this is s1: %s\nthis is s3: %s\nthis is the result: %d\nthis is my result: %d\n\n", s1, s3, strcmp(s1, s3), ft_strcmp(s1, s3));
-	printf("this is s1: %s\nthis is s4: %s\nthis is the result: %d\nthis is my result: %d\n\n", s1, s4, strcmp(s1, s4), ft_strcmp(s1, s4));
-	printf("this is s1: %s\nthis is s5: %s\nthis is the result: %d\nthis is my result: %d\n\n", s1, s5, strcmp(s1, s5), ft_strcmp(s1, s5));
-	printf("this is s1: %s\nthis is s6: %s\nthis is the result: %d\nthis is my result: %d\n\n", s1, s6, strcmp(s1, s6), ft_strcmp(s1, s6));
-	printf("this is s1: %s\nthis is s7: %s\nthis is the result: %d\nthis is my result: %d\n\n", s1, s7, strcmp(s1, s7), ft_strcmp(s1, s7));
-	printf("this is s1: %s\nthis is s8: %s\nthis is the result: %d\nthis is my result: %d\n\n", s1, s8, strcmp(s1, s8), ft_strcmp(s1, s8));
+	printf("s1: %s\ns2: %s\nreal: %d\nmine: %d\n\n",
+		s1, s2, strcmp(s1, s2), ft_strcmp(s1, s2));
+	printf("s1: %s\ns3: %s\nreal: %d\nmine: %d\n\n",
+		s1, s3, strcmp(s1, s3), ft_strcmp(s1, s3));
+	printf("s1: %s\ns4: %s\nreal: %d\nmine: %d\n\n",
+		s1, s4, strcmp(s1, s4), ft_strcmp(s1, s4));
+	printf("s1: %s\ns5: %s\nreal: %d\nmine: %d\n\n",
+		s1, s5, strcmp(s1, s5), ft_strcmp(s1, s5));
+	printf("s1: %s\ns6: %s\nreal: %d\nmine: %d\n\n",
+		s1, s6, strcmp(s1, s6), ft_strcmp(s1, s6));
+	printf("s1: %s\ns7: %s\nreal: %d\nmine: %d\n\n",
+		s1, s7, strcmp(s1, s7), ft_strcmp(s1, s7));
+	printf("s1: %s\ns8: %s\nreal: %d\nmine: %d\n\n",
+		s1, s8, strcmp(s1, s8), ft_strcmp(s1, s8));
 }*/

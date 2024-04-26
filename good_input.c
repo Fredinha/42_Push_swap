@@ -34,6 +34,7 @@ int	only_numbers(int argc, char **argv)
 	}
 	return (1);
 }
+
 int	no_duplicates(int argc, char **argv)
 {
 	int	i;
@@ -45,7 +46,6 @@ int	no_duplicates(int argc, char **argv)
 		i = j + 1;
 		while (i < argc)
 		{
-			//if (ft_strcmp(argv[j], argv[i]) == 0)
 			if (ft_atoi(argv[j]) == ft_atoi(argv[i]))
 				return (0);
 			i++;
@@ -54,9 +54,10 @@ int	no_duplicates(int argc, char **argv)
 	}
 	return (1);
 }
+
 int	is_it_an_int(int argc, char **argv)
 {
-	int i;
+	int		i;
 	long	nbr;
 
 	i = 1;
@@ -71,20 +72,18 @@ int	is_it_an_int(int argc, char **argv)
 	}
 	return (1);
 }
-int correct_input(int argc, char **argv)
+
+int	correct_input(int argc, char **argv)
 {
 	if (argc < 2)
-		ft_printf("Error: You don't have enough arguments\n");
+		ft_printf("Error\n");
 	else if (only_numbers(argc, argv) == 0)
-		ft_printf("Error: You can only send numbers\n");
+		ft_printf("Error\n");
 	else if (no_duplicates(argc, argv) == 0)
-		ft_printf("Error: You can't send duplicates\n");
+		ft_printf("Error\n");
 	else if (is_it_an_int(argc, argv) == 0)
-		ft_printf("Error: You can only send ints\n");
+		ft_printf("Error\n");
 	else
-	{
 		return (1);
-	//	ft_printf("The input is correct :)\n");
-	}
 	return (0);
 }
