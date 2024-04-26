@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+//this function checks if the input has onlu numeric characters
+
 int	only_numbers(int argc, char **argv)
 {
 	int	i;
@@ -35,6 +37,8 @@ int	only_numbers(int argc, char **argv)
 	return (1);
 }
 
+//this function checks if there are no repetead numbers
+
 int	no_duplicates(int argc, char **argv)
 {
 	int	i;
@@ -55,6 +59,9 @@ int	no_duplicates(int argc, char **argv)
 	return (1);
 }
 
+//this function checks if there is no number bigger than the maximum int
+//or smaller than the minimum int
+
 int	is_it_an_int(int argc, char **argv)
 {
 	int		i;
@@ -72,6 +79,9 @@ int	is_it_an_int(int argc, char **argv)
 	}
 	return (1);
 }
+
+//this function checks if there are enough arguments
+//and it checks all the other potential errors
 
 int	correct_input(int argc, char **argv)
 {

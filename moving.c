@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+//this function calls the rrr function as many times as needed
 void	do_rev_rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
 {
 	while (*cost_a < 0 && *cost_b < 0)
@@ -22,8 +23,8 @@ void	do_rev_rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
 	}
 }
 
-/* ft_rotate_both:
- */
+//this function calls the rr function as many times as needed
+
 void	do_rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
 {
 	while (*cost_a > 0 && *cost_b > 0)
@@ -34,9 +35,7 @@ void	do_rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
 	}
 }
 
-/* do_rotate_a:
- *
- */
+//this fucntion calls the ra or rra function as many times as needed
 void	do_rotate_a(t_stack **a, int *cost)
 {
 	if (*cost > 0)
@@ -57,9 +56,8 @@ void	do_rotate_a(t_stack **a, int *cost)
 	}
 }
 
-/* ft_rotate_b:
- *
- */
+///this fucntion calls the rb or rrb function as many times as needed
+
 void	do_rotate_b(t_stack **b, int *cost)
 {
 	if (*cost > 0)
@@ -79,6 +77,10 @@ void	do_rotate_b(t_stack **b, int *cost)
 		}
 	}
 }
+//if the cost is negative
+//it means the numbers are in the bottom half of the stack
+//that means it's better to reverse rotate
+//otherwise is better to rotate
 
 void	do_move(t_stack **a, t_stack **b, int cost_a, int cost_b)
 {

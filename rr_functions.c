@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+//this function moves the bottom element of the stack to the top
+
 void	reverse_rotate_function(t_stack **stack)
 {
 	t_stack	*original_last;

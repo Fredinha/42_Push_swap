@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+//this function sends every number from a to b except from the 2 smallest ones
+
 void	push_all_save_two(t_stack **a, t_stack **b)
 {
 	int	size;
@@ -39,6 +41,9 @@ void	push_all_save_two(t_stack **a, t_stack **b)
 	}
 }
 
+//this function reorders the ctack a
+//it puts the element with the lowest index on the top
+
 void	reorder_based_on_lowest(t_stack **a)
 {
 	int	lowest;
@@ -64,7 +69,9 @@ void	reorder_based_on_lowest(t_stack **a)
 	}
 }
 
-//fazer o sort_three
+//this function sorts the 3 numbers
+//the biggest goes to the bottom
+//and the other two are swapped if needed
 
 void	*sort_three(t_stack **stack)
 {
@@ -80,6 +87,10 @@ void	*sort_three(t_stack **stack)
 	return (*stack);
 }
 
+//if the list has more than 3 numbers it comes here
+//this function sends all elements from a to b except 2
+//then every number gets a target and the cheapest number is moved
+
 void	big_sort(t_stack **a, t_stack **b)
 {
 	push_all_save_two(a, b);
@@ -93,7 +104,7 @@ void	big_sort(t_stack **a, t_stack **b)
 		reorder_based_on_lowest(a);
 }
 
-// criar push_swap(int a, int b)
+//this function decides which algorithm to apply
 
 void	push_swap(t_stack **a, t_stack **b, int size)
 {

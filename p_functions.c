@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+//this function moves the top element of a stack to another stack
+
 void	push_function(t_stack **a, t_stack **b)
 {
 	t_stack	*temp;

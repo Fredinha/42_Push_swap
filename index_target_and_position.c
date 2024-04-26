@@ -12,6 +12,9 @@
 
 #include "push_swap.h"
 
+//this function assigns an index to each number in the list
+//in ascending order and starting from 1
+
 void	put_index(t_stack *stack)
 {
 	t_stack	*current;
@@ -34,6 +37,9 @@ void	put_index(t_stack *stack)
 	}
 }
 
+//this function saves the position of each element of the list
+//starting from 0 (first element of the stack)
+
 void	get_position(t_stack **stack)
 {
 	t_stack	*temp;
@@ -49,7 +55,10 @@ void	get_position(t_stack **stack)
 	}
 }
 
-// retorna a posicao do menor index na stack
+//this function saves the position of the number
+//with the smallest index
+//(it will be the first element of the final order)
+
 int	get_lowest_index_position(t_stack **stack)
 {
 	t_stack	*temp;
@@ -71,6 +80,12 @@ int	get_lowest_index_position(t_stack **stack)
 	}
 	return (lowest_pos);
 }
+
+//this function finds out what is the target
+//and returns the position of the target
+//it receives the INT MAX as the target index
+//and it looks for the closest bigger element in a
+//if it doesn't exist, the target is the smallest number in a
 
 int	get_target(t_stack **a, int b_index, int target_index, int target_pos)
 {
@@ -100,6 +115,8 @@ int	get_target(t_stack **a, int b_index, int target_index, int target_pos)
 	}
 	return (target_pos);
 }
+
+//this function gets the target for each element of the stack
 
 void	get_target_position(t_stack **a, t_stack **b)
 {

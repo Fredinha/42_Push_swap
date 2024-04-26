@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-//fazer o find_max
+//this function finds the biggest number in the list
 
 t_stack	*find_max(t_stack *a)
 {
@@ -30,7 +30,7 @@ t_stack	*find_max(t_stack *a)
 	return (max);
 }
 
-//fazer o find_min
+//this function finds the smallest number in the list
 
 t_stack	*find_min(t_stack *stack)
 {
@@ -48,6 +48,8 @@ t_stack	*find_min(t_stack *stack)
 	return (min);
 }
 
+//this function converts the negative numbers to positive
+
 int	no_neg(int number)
 {
 	if (number < 0)
@@ -55,6 +57,8 @@ int	no_neg(int number)
 	return (number);
 }
 
+//this function calculates the cost of moving elements between a and b
+//if the number is in the bottom part of the stack the cost is negative
 void	get_cost(t_stack **a, t_stack **b)
 {
 	t_stack	*temp_a;
@@ -77,6 +81,9 @@ void	get_cost(t_stack **a, t_stack **b)
 		temp_b = temp_b->next;
 	}
 }
+
+//this function identifies the cheapest move and make it happen
+//it uses the function no_neg because of the function get_cost
 
 void	do_cheapest_move(t_stack **a, t_stack **b)
 {

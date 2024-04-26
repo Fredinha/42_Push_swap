@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+//this function creates a stack based on the numbers passed as arguments
+
 t_stack	*create_stack(char **argv)
 {
 	t_stack	*a;
@@ -29,6 +31,8 @@ t_stack	*create_stack(char **argv)
 	return (a);
 }
 
+//this function creates a new node for the list
+
 t_stack	*create_node(int number)
 {
 	t_stack	*node;
@@ -41,6 +45,7 @@ t_stack	*create_node(int number)
 	return (node);
 }
 
+//this function adds a new node at the end of the list
 void	add_to_stack(t_stack **stack, t_stack *new_node)
 {
 	t_stack	*current;
@@ -62,7 +67,7 @@ void	add_to_stack(t_stack **stack, t_stack *new_node)
 	}
 }
 
-// criar get_size(t_list *stack)
+// this function returns the size of the list
 
 int	get_size(t_stack *stack)
 {
@@ -79,7 +84,8 @@ int	get_size(t_stack *stack)
 	return (size);
 }
 
-// criar free_stack (int x)
+//this function frees the memory allocated for all nodes of the list
+
 void	free_the_stack(t_stack **stack)
 {
 	t_stack	*temp;

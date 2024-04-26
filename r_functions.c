@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+//this function moves the top element of the stack to the bottom
+
 void	rotate_function(t_stack **stack)
 {
 	t_stack	*current;

@@ -12,6 +12,9 @@
 
 #include "push_swap.h"
 
+//this function checks if the numbers are in ascending order
+//if they are, it returns true
+
 bool	stack_is_sorted(t_stack *a)
 {
 	t_stack	*temp;
@@ -29,6 +32,14 @@ bool	stack_is_sorted(t_stack *a)
 	}
 	return (true);
 }
+
+//the main first checks if the input is correct
+//then stack a and b are created
+//and stack a is filled with the numbers passed as arguments
+//then it saves the size of the stack a in size
+//and it assigns an index to each number considering the correct ascending order
+//then, if the stack is not sorted, it does the push swap magic
+//at the end we make sure to terminate the stacks
 
 int	main(int argc, char **argv)
 {

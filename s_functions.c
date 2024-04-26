@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+//this function swaps the position of the top two elements of the stack
 void	swap_function(t_stack *stack)
 {
 	int	temp;
